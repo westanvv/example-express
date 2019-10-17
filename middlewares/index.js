@@ -2,7 +2,7 @@ var express = require('express');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var cors = require('cors')
+var cors = require('cors');
 
 module.exports = function(app) {
   app.use(logger('dev'));

@@ -1,5 +1,5 @@
 const messages = require('./messages');
 
 module.exports = function(app) {
-  app.use('/messages', messages)
+  app.use('/messages', messages);
 };
