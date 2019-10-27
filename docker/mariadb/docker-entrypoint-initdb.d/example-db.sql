@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
--- Host: mariadb:3306
--- Generation Time: Oct 24, 2017 at 07:57 PM
--- Server version: 10.2.8-MariaDB-10.2.8+maria~jessie
--- PHP Version: 7.0.21
+-- Хост: mariadb:3306
+-- Час створення: Жов 27 2019 р., 19:28
+-- Версія сервера: 10.3.12-MariaDB-1:10.3.12+maria~bionic
+-- Версія PHP: 7.2.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `example-db`
+-- База даних: `example-db`
 --
 CREATE DATABASE IF NOT EXISTS `example-db` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
 USE `example-db`;
@@ -27,44 +27,51 @@ USE `example-db`;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messages`
+-- Структура таблиці `messages`
 --
 
 DROP TABLE IF EXISTS `messages`;
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
-  `msg` varchar(255) NOT NULL
+  `msg` varchar(255) NOT NULL,
+  `createdAt` datetime NOT NULL,
+  `updatedAt` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `messages`
+-- Очистити таблицю перед вставкою `messages`
 --
 
-INSERT INTO `messages` (`id`, `title`, `msg`) VALUES
-(1, 'Brunch this weekend?', 'I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?'),
-(2, 'Summer BBQ', 'Wish I could come, but I&apos;m out of town this weekend.'),
-(3, 'Oui oui', 'Do you have Paris recommendations? Have you ever been?'),
-(4, 'Birdthday gift', 'Do you have any ideas what we can get Heidi for her birthday? How about a pony?'),
-(5, 'Recipe to try', 'We should eat this: grated squash. Corn and tomatillo tacos.'),
-(6, 'Brendan Lim', 'I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?');
-
+TRUNCATE TABLE `messages`;
 --
--- Indexes for dumped tables
+-- Дамп даних таблиці `messages`
 --
 
+INSERT INTO `messages` (`id`, `title`, `msg`, `createdAt`, `updatedAt`) VALUES
+(1, 'Brunch this weekend?', 'I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(2, 'Summer BBQ', 'Wish I could come, but I&apos;m out of town this weekend.', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(3, 'Oui oui', 'Do you have Paris recommendations? Have you ever been?', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(4, 'Birdthday gift', 'Do you have any ideas what we can get Heidi for her birthday? How about a pony?', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(5, 'Recipe to try', 'We should eat this: grated squash. Corn and tomatillo tacos.', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 'Brendan Lim', 'I&apos;ll be in your neighborhood doing errands this weekend. Do you want to grab brunch?', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
 --
--- Indexes for table `messages`
+-- Індекси збережених таблиць
+--
+
+--
+-- Індекси таблиці `messages`
 --
 ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для збережених таблиць
 --
 
 --
--- AUTO_INCREMENT for table `messages`
+-- AUTO_INCREMENT для таблиці `messages`
 --
 ALTER TABLE `messages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;

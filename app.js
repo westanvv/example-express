@@ -1,6 +1,8 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const createError = require('http-errors');
 require('dotenv').config();
+
+const app = express();
 
 require('./configs')(app);
 require('./middlewares')(app);
@@ -8,9 +10,7 @@ require('./routes')(app);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+  next(createError(404));
 });
 
 // error handler

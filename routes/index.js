@@ -1,5 +1,9 @@
-const messages = require('./messages');
+const appRoute = require('./app');
+const usersRoute = require('./users');
+const messagesRoute = require('./messages');
 
-module.exports = function(app) {
-  app.use('/messages', messages);
+module.exports = app => {
+  app.use('/', appRoute);
+  app.use('/users', usersRoute);
+  app.use('/messages', messagesRoute);
 };
